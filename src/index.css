@@ -1,13 +1,435 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  /* =========================
+     COLORS
+  ========================= */
+  --bg-warm: #F7F3EC;
+  --bg-secondary: #EEE5D8;
+  --bg-card: #FAF7F2;
+  --bg-dark: #2D241F;
+
+  --accent-terracotta: #A65D3B;
+  --accent-terracotta-hover: #8E4B2B;
+  --accent-terracotta-light: #F4E8E1;
+
+  --accent-sage: #7D8872;
+  --accent-sage-light: #E9ECE6;
+
+  --text-dark: #2D241F;
+  --text-muted: #6E6259;
+  --text-light: #9E9287;
+
+  --border-color: rgba(45, 36, 31, 0.12);
+  --border-light: rgba(45, 36, 31, 0.06);
+
+  --shadow-subtle: 0 4px 20px rgba(45, 36, 31, 0.04);
+  --shadow-medium: 0 8px 30px rgba(45, 36, 31, 0.08);
+  --shadow-modal: 0 20px 50px rgba(45, 36, 31, 0.18);
+
+
+  /* =========================
+     TYPOGRAPHY
+  ========================= */
+
+  /* Elegant serif for headings */
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+
+  /* Clean modern sans-serif */
+  --font-sans: "DM Sans", "Inter", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+
+  /* =========================
+     TRANSITIONS
+  ========================= */
+
+  --transition-fast: 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-medium: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+
+
+  /* =========================
+     RADIUS
+  ========================= */
+
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 8px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+/* =========================
+   RESET
+========================= */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background-color: var(--bg-warm);
+  color: var(--text-dark);
+
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.6;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADINGS
+========================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  color: var(--text-dark);
+
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+
+/* Main hero heading */
+h1 {
+  font-size: clamp(40px, 4.2vw, 56px);
+}
+
+
+/* Section headings */
+h2 {
+  font-size: clamp(28px, 3vw, 38px);
+}
+
+
+/* Smaller headings */
+h3 {
+  font-size: clamp(22px, 2vw, 28px);
+}
+
+h4 {
+  font-size: 22px;
+}
+
+
+/* =========================
+   BODY TEXT
+========================= */
+
+p {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+
+/* =========================
+   LINKS
+========================= */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+
+/* Primary button */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background-color: var(--accent-terracotta);
+  color: #FFFDFC;
+
+  padding: 12px 22px;
+
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border-radius: var(--radius-sm);
+
+  transition: all var(--transition-fast);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-terracotta-hover);
+
+  transform: translateY(-1px);
+
+  box-shadow:
+    0 4px 12px rgba(166, 93, 59, 0.25);
+}
+
+
+/* Secondary button */
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background-color: transparent;
+  color: var(--text-dark);
+
+  border: 1px solid var(--text-dark);
+
+  padding: 11px 21px;
+
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border-radius: var(--radius-sm);
+
+  transition: all var(--transition-fast);
+}
+
+.btn-secondary:hover {
+  background-color: var(--text-dark);
+  color: var(--bg-warm);
+}
+
+
+/* Terracotta outline */
+
+.btn-outline-terracotta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  background-color: transparent;
+  color: var(--accent-terracotta);
+
+  border: 1px solid var(--accent-terracotta);
+
+  padding: 11px 21px;
+
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  border-radius: var(--radius-sm);
+
+  transition: all var(--transition-fast);
+}
+
+.btn-outline-terracotta:hover {
+  background-color: var(--accent-terracotta);
+  color: #FFFDFC;
+}
+
+
+/* =========================
+   FORM ELEMENTS
+========================= */
+
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+  font-size: 14px;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+  width: 100%;
+  max-width: 1360px;
+
+  margin: 0 auto;
+
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+
+/* =========================
+   SMALL LABELS
+   Example:
+   OUR COLLECTIONS
+   OUR STORY
+========================= */
+
+.eyebrow,
+.section-label,
+.small-label {
+  font-family: var(--font-sans);
+
+  font-size: 9px;
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+
+  color: var(--text-light);
+}
+
+
+/* =========================
+   PRODUCT TYPOGRAPHY
+========================= */
+
+.product-title {
+  font-family: var(--font-sans);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  line-height: 1.4;
+
+  color: var(--text-dark);
+}
+
+.product-price {
+  font-family: var(--font-sans);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  color: var(--text-dark);
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav-link {
+  font-family: var(--font-sans);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.01em;
+
+  color: var(--text-dark);
+
+  transition: color var(--transition-fast);
+}
+
+.nav-link:hover {
+  color: var(--accent-terracotta);
+}
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-warm);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(45, 36, 31, 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-terracotta);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  h1 {
+    font-size: 38px;
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 23px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-outline-terracotta {
+    font-size: 10px;
+    padding: 11px 18px;
+  }
 }

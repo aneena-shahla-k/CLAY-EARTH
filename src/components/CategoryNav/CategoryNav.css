@@ -1,0 +1,45 @@
+.category-nav-wrapper {
+  margin: 32px 0;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 16px;
+}
+
+.category-scroll-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.category-scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.category-pill {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  border: 1px solid transparent;
+  transition: all var(--transition-fast);
+}
+
+.category-pill:hover {
+  color: var(--text-dark);
+  background-color: rgba(238, 229, 216, 0.4);
+}
+
+.category-pill.active {
+  color: #FFFDFC;
+  background-color: var(--accent-terracotta);
+  border-color: var(--accent-terracotta);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(166, 93, 59, 0.2);
+}

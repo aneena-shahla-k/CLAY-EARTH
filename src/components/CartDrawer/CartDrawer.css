@@ -1,0 +1,139 @@
+.cart-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cart-item-card {
+  display: flex;
+  gap: 14px;
+  background-color: var(--bg-card);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  flex-shrink: 0;
+}
+
+.cart-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cart-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-name-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cart-item-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+
+.cart-remove-btn {
+  color: var(--text-light);
+  transition: color var(--transition-fast);
+}
+
+.cart-remove-btn:hover {
+  color: #C0392B;
+}
+
+.cart-item-price {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.cart-qty-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 8px;
+}
+
+.cart-qty-control {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-warm);
+}
+
+.cart-qty-control button {
+  padding: 4px 8px;
+  color: var(--text-dark);
+}
+
+.cart-qty-control span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 0 8px;
+}
+
+.cart-item-subtotal {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.cart-drawer-footer {
+  padding: 20px 24px;
+  background-color: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.free-shipping-progress {
+  font-size: 0.78rem;
+  text-align: center;
+  padding: 8px;
+  background-color: var(--accent-terracotta-light);
+  border-radius: var(--radius-sm);
+  color: var(--accent-terracotta);
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.summary-line.total-line {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-color);
+}
+
+.grand-total-val {
+  color: var(--accent-terracotta);
+}
+
+.cart-drawer-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}

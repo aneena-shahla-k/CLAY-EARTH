@@ -1,0 +1,212 @@
+.promo-banner-section {
+  position: relative;
+  width: 100%;
+  height: 450px;
+
+  padding: 0;
+
+  overflow: hidden;
+
+  background-color: var(--bg-dark);
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.promo-banner-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+.promo-banner-image img {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+  object-position: center;
+
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.promo-banner-section:hover .promo-banner-image img {
+  transform: scale(1.015);
+}
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.promo-banner-overlay {
+  position: absolute;
+  inset: 0;
+
+  z-index: 1;
+
+  background: linear-gradient(
+    90deg,
+    rgba(45, 30, 20, 0.50) 0%,
+    rgba(45, 30, 20, 0.30) 30%,
+    rgba(45, 30, 20, 0.10) 58%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.promo-banner-container {
+  position: relative;
+
+  z-index: 2;
+
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.promo-content {
+  max-width: 400px;
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+.promo-heading {
+  color: #FFFDFC;
+
+  margin-bottom: 12px;
+}
+
+
+/* =========================
+   SUB TEXT
+========================= */
+
+.promo-sub {
+  color: rgba(255, 255, 255, 0.88);
+
+  margin-bottom: 18px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.promo-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  padding: 10px 14px;
+
+  background-color: #F7F3EC;
+  color: var(--text-dark);
+
+  border-radius: var(--radius-sm);
+
+  text-decoration: none;
+
+  transition:
+    background-color var(--transition-fast),
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.promo-button:hover {
+  background-color: var(--accent-terracotta);
+  color: #FFF;
+
+  transform: translateY(-1px);
+}
+
+.promo-button svg {
+  transition: transform var(--transition-fast);
+}
+
+.promo-button:hover svg {
+  transform: translateX(3px);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+  .promo-banner-section {
+    height: 280px;
+  }
+
+  .promo-banner-image img {
+    object-position: 60% center;
+  }
+
+  .promo-banner-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(45, 30, 20, 0.58) 0%,
+      rgba(45, 30, 20, 0.30) 45%,
+      rgba(45, 30, 20, 0.08) 100%
+    );
+  }
+
+  .promo-content {
+    max-width: 330px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+
+  .promo-banner-section {
+    height: 360px;
+  }
+
+  .promo-banner-container {
+    align-items: flex-end;
+
+    padding-bottom: 38px;
+  }
+
+  .promo-banner-image img {
+    object-position: 65% center;
+  }
+
+  .promo-banner-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(45, 30, 20, 0.05) 0%,
+      rgba(45, 30, 20, 0.15) 35%,
+      rgba(45, 30, 20, 0.68) 100%
+    );
+  }
+}

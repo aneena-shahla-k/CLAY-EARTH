@@ -1,0 +1,310 @@
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 650px;
+
+  overflow: hidden;
+
+  background: #f5f3ef;
+}
+
+
+/* =========================================
+   VIDEO WRAPPER
+========================================= */
+
+.hero-video-wrap {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HERO VIDEO
+========================================= */
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+
+  opacity: 1;
+  visibility: visible;
+
+  transform: scale(1);
+
+  will-change: transform;
+}
+
+
+/* =========================================
+   VIDEO OVERLAY
+========================================= */
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.02) 0%,
+    rgba(0, 0, 0, 0.05) 55%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   LIGHT AESTHETIC SOUND BUTTON
+========================================= */
+
+.hero-unmute-btn {
+  position: absolute;
+
+  right: 32px;
+  bottom: 32px;
+
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 10px 17px 10px 10px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  border: 1px solid rgba(255, 255, 255, 0.75);
+
+  border-radius: 100px;
+
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+
+  color: #282624;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.09em;
+
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 8px 28px rgba(0, 0, 0, 0.11),
+    0 2px 7px rgba(0, 0, 0, 0.06);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    color 0.3s ease;
+
+  animation: aestheticFloat 3.2s ease-in-out infinite;
+}
+
+
+/* =========================================
+   SOUND ICON CIRCLE
+========================================= */
+
+.unmute-icon {
+  width: 27px;
+  height: 27px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  background: #f1eee9;
+
+  color: #292724;
+
+  border-radius: 50%;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+
+/* =========================================
+   BUTTON TEXT
+========================================= */
+
+.unmute-text {
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.hero-unmute-btn:hover {
+  background: #ffffff;
+
+  color: #11100f;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 13px 35px rgba(0, 0, 0, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.07);
+
+  animation: none;
+}
+
+
+.hero-unmute-btn:hover .unmute-icon {
+  background: #e9e5df;
+  color: #11100f;
+}
+
+
+/* =========================================
+   ACTIVE
+========================================= */
+
+.hero-unmute-btn:active {
+  transform: translateY(-1px);
+}
+
+
+/* =========================================
+   FOCUS
+========================================= */
+
+.hero-unmute-btn:focus-visible {
+  outline: 2px solid rgba(40, 38, 35, 0.35);
+  outline-offset: 4px;
+}
+
+
+/* =========================================
+   FLOATING ANIMATION
+========================================= */
+
+@keyframes aestheticFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .hero-section {
+    min-height: 600px;
+  }
+
+  .hero-unmute-btn {
+    right: 22px;
+    bottom: 24px;
+
+    padding: 9px 15px 9px 9px;
+
+    gap: 8px;
+
+    font-size: 9px;
+  }
+
+  .unmute-icon {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .hero-section {
+    height: 100svh;
+    min-height: 580px;
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.015) 0%,
+      rgba(0, 0, 0, 0.07) 55%,
+      rgba(0, 0, 0, 0.2) 100%
+    );
+  }
+
+  .hero-unmute-btn {
+    right: 16px;
+    bottom: 20px;
+
+    padding: 8px 13px 8px 8px;
+
+    gap: 7px;
+
+    font-size: 8px;
+
+    letter-spacing: 0.08em;
+  }
+
+  .unmute-icon {
+    width: 23px;
+    height: 23px;
+  }
+}
+
+
+/* =========================================
+   VERY SMALL DEVICES
+========================================= */
+
+@media (max-width: 380px) {
+  .hero-unmute-btn {
+    right: 12px;
+    bottom: 16px;
+
+    padding: 7px 11px 7px 7px;
+
+    font-size: 7px;
+  }
+
+  .unmute-icon {
+    width: 22px;
+    height: 22px;
+  }
+}

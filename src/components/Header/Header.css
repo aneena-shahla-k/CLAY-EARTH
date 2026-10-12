@@ -1,0 +1,549 @@
+/* =========================================================
+   ANNOUNCEMENT BAR
+========================================================= */
+
+.announcement-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 34px;
+
+  z-index: 1001;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--accent-terracotta);
+
+  color: #fffdfc;
+
+  font-size: 0.68rem;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  padding: 0 16px;
+
+  box-sizing: border-box;
+}
+
+.announcement-dot {
+  margin: 0 10px;
+  opacity: 0.7;
+}
+
+
+/* =========================================================
+   MAIN HEADER
+========================================================= */
+
+.site-header {
+  position: fixed;
+
+  top: 34px;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 1000;
+
+  background-color: rgba(247, 243, 236, 0.82);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-bottom: 1px solid var(--border-light);
+
+  transition:
+    background-color 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* =========================================================
+   SCROLLED HEADER
+========================================================= */
+
+.site-header.scrolled {
+  background-color: rgba(247, 243, 236, 0.96);
+
+  box-shadow:
+    0 8px 30px rgba(45, 36, 31, 0.07);
+
+  border-bottom-color: var(--border-color);
+}
+
+
+/* =========================================================
+   HEADER CONTENT
+========================================================= */
+
+.header-content {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  height: 76px;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.brand-logo {
+  display: flex;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-family: var(--font-serif);
+
+  font-size: 1.55rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.14em;
+
+  color: var(--text-dark);
+
+  line-height: 1;
+}
+
+.logo-sub {
+  font-size: 0.55rem;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+
+  color: var(--accent-terracotta);
+
+  margin-top: 4px;
+
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   DESKTOP NAVIGATION
+========================================================= */
+
+.desktop-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 34px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  font-size: 0.75rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+
+  color: var(--text-dark);
+
+  text-decoration: none;
+
+  padding: 7px 0;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+/* Underline */
+
+.desktop-nav a::after {
+  content: '';
+
+  position: absolute;
+
+  left: 0;
+  bottom: 0;
+
+  width: 0;
+  height: 1px;
+
+  background-color: var(--accent-terracotta);
+
+  transition:
+    width 0.3s ease;
+}
+
+.desktop-nav a:hover,
+.desktop-nav a.active {
+  color: var(--accent-terracotta);
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  width: 100%;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.header-actions {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+
+  flex-shrink: 0;
+}
+
+.icon-btn {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-dark);
+
+  cursor: pointer;
+
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.icon-btn:hover {
+  color: var(--accent-terracotta);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   BADGE
+========================================================= */
+
+.badge {
+  position: absolute;
+
+  top: -2px;
+  right: -4px;
+
+  width: 16px;
+  height: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: var(--accent-terracotta);
+
+  color: #fffdfc;
+
+  font-size: 0.58rem;
+
+  font-weight: 600;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.mobile-menu-btn {
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-dark);
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   MOBILE DRAWER
+========================================================= */
+
+.mobile-nav-drawer {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: min(320px, 88vw);
+  height: 100vh;
+
+  background-color: var(--bg-warm);
+
+  z-index: 2000;
+
+  box-shadow:
+    8px 0 35px rgba(45, 36, 31, 0.12);
+
+  transform: translateX(-100%);
+
+  transition:
+    transform 0.35s ease;
+
+  padding: 28px 24px;
+
+  display: flex;
+  flex-direction: column;
+
+  box-sizing: border-box;
+}
+
+.mobile-nav-drawer.open {
+  transform: translateX(0);
+}
+
+
+/* =========================================================
+   MOBILE DRAWER HEADER
+========================================================= */
+
+.mobile-nav-header {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  padding-bottom: 22px;
+
+  border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-nav-header button {
+  border: none;
+
+  background: transparent;
+
+  color: var(--text-dark);
+
+  cursor: pointer;
+
+  display: flex;
+}
+
+
+/* =========================================================
+   MOBILE LOGO
+========================================================= */
+
+.brand-logo-sm {
+  font-family: var(--font-serif);
+
+  font-size: 1.15rem;
+
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  color: var(--text-dark);
+}
+
+
+/* =========================================================
+   MOBILE NAV LINKS
+========================================================= */
+
+.mobile-nav-links {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 22px;
+
+  margin-top: 32px;
+}
+
+.mobile-nav-links a {
+  color: var(--text-dark);
+
+  text-decoration: none;
+
+  font-size: 0.78rem;
+
+  font-weight: 500;
+
+  letter-spacing: 0.14em;
+
+  transition:
+    color 0.25s ease;
+}
+
+.mobile-nav-links a:hover {
+  color: var(--accent-terracotta);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .desktop-nav {
+    gap: 22px;
+  }
+
+  .header-actions {
+    gap: 10px;
+  }
+
+  .logo-text {
+    font-size: 1.35rem;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 880px) {
+
+  .announcement-bar {
+    height: 32px;
+
+    font-size: 0.58rem;
+
+    letter-spacing: 0.06em;
+  }
+
+  .announcement-dot {
+    margin: 0 6px;
+  }
+
+  .site-header {
+    top: 32px;
+  }
+
+  .header-content {
+    height: 66px;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .brand-logo {
+    position: absolute;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    align-items: center;
+  }
+
+  .logo-text {
+    font-size: 1.15rem;
+
+    letter-spacing: 0.11em;
+  }
+
+  .logo-sub {
+    font-size: 0.48rem;
+
+    letter-spacing: 0.22em;
+  }
+
+  .header-actions {
+    gap: 4px;
+  }
+
+  .header-actions .icon-btn:nth-child(2),
+  .header-actions .icon-btn:nth-child(3) {
+    display: none;
+  }
+
+  .icon-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .announcement-bar {
+    height: 30px;
+
+    font-size: 0.52rem;
+
+    padding: 0 10px;
+  }
+
+  .site-header {
+    top: 30px;
+  }
+
+  .header-content {
+    height: 62px;
+  }
+
+  .logo-text {
+    font-size: 1rem;
+  }
+
+  .logo-sub {
+    font-size: 0.42rem;
+  }
+
+  .header-actions .search-btn {
+    display: none;
+  }
+}
